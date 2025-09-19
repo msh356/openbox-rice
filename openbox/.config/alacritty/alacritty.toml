@@ -1,0 +1,84 @@
+[[keyboard.bindings]]
+action = "Paste"
+key = "V"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "Copy"
+key = "C"
+mods = "Control|Shift"
+
+[[keyboard.bindings]]
+action = "IncreaseFontSize"
+key = "Plus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "DecreaseFontSize"
+key = "Minus"
+mods = "Control"
+
+[[keyboard.bindings]]
+action = "ResetFontSize"
+key = "Key0"
+mods = "Control"
+
+[general]
+live_config_reload = true
+working_directory = "None"
+
+[terminal]
+
+[colors.primary]
+background = "#2e2e2e"  # темно-серый фон
+foreground = "#b0b0b0"  # светло-серый текст по умолчанию
+
+[colors.normal]
+black   = "#1c1c1c"
+red     = "#cd5c5c"
+green   = "#5c8f5c"
+yellow  = "#d0af5f"
+blue    = "#5c7f8f"
+magenta = "#8f5c8f"
+cyan    = "#5c8f8f"
+white   = "#d0d0d0"
+
+[colors.bright]
+black   = "#2e2e2e"
+red     = "#d0755f"
+green   = "#87af87"
+yellow  = "#ffaf5f"
+blue    = "#87afd7"
+magenta = "#d787af"
+cyan    = "#87d7d7"
+white   = "#e5e5e5"
+
+[cursor]
+style = "Block"
+
+[font]
+size = 11.0
+
+[font.normal]
+family = "Hack"
+style = "Regular"
+
+[mouse]
+hide_when_typing = false
+
+[selection]
+save_to_clipboard = true
+
+[terminal.shell]
+args = ["--login"]
+program = "/usr/bin/fish"
+
+[window]
+decorations = "full"
+dynamic_padding = true
+
+[window.padding]
+x = 0
+y = 0
+
+[keyboard]

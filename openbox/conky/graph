@@ -1,0 +1,92 @@
+-- ############ 
+-- # Settings # 
+-- ############
+
+conky.config = {
+color1 = "C7C7C7"; --white
+color2 = "00D0D2"; --teal
+color3 = "BFAF34"; --orange like
+color4 = "DB641E"; --reddish
+update_interval = 1;
+double_buffer = true;
+no_buffers = true;
+imlib_cache_size = 10;
+own_window = true;
+own_window_hints = "undecorated,sticky,below,skip_taskbar,skip_pager";
+own_window_argb_visual = true;
+own_window_argb_value = 0;
+own_window_transparent = true;
+background = true;
+border_inner_margin = 0;
+border_outer_margin = 0;
+alignment = "bottom_right";
+gap_x = 10;
+gap_y = 60;
+use_xft = true;
+text_buffer_size = 256;
+draw_shades = false;
+override_utf8_locale = true;
+draw_graph_borders = false;
+cpu_avg_samples = 2;
+net_avg_samples = 2;
+short_units = true;
+}
+
+-- ############ 
+-- #   Text   # 
+-- ############
+
+conky.text=[[
+${font Ubuntu Mono:size=22}${alignr 12}${color2}CORES${color1}${font Ubuntu Mono:size=17}${voffset 10}
+${alignr 12}${freq_g 1} GHz
+${voffset 1}${alignr 12}${freq_g 2} GHz
+${voffset 1}${alignr 12}${freq_g 3} GHz
+${voffset 1}${alignr 12}${freq_g 4} GHz
+${voffset 1}${alignr 12}${freq_g 5} GHz
+${voffset 1}${alignr 12}${freq_g 6} GHz
+${voffset 1}${alignr 12}${freq_g 7} GHz
+${voffset 1}${alignr 12}${freq_g 8} GHz
+${voffset 20}${font Ubuntu Mono:size=17}\
+${alignr 12}${color1}${downspeed wlp0s20f3}${color2}${voffset -4}${font Ubuntu Mono:size=22} DL
+${offset -12}${downspeedgraph wlp0s20f3 50, 250 00D0D2 DB641E -l -t}
+${alignr 12}${color1}${memperc}%${color2} RAM
+${offset -12}${memgraph 50,250 00D0D2 DB641E -l -t}
+${alignr 12}${color1}${cpu cpu0}%${color2} CPU
+${offset -12}${cpugraph 50,250 00D0D2 DB641E -l -t}
+${voffset 0}${alignr 12}\
+${if_match ${cpu cpu1}<=50}${color2}\
+${else}${if_match ${cpu cpu1}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${offset -17}${cpubar cpu1 10,111} \
+${if_match ${cpu cpu2}<=50}${color2}\
+${else}${if_match ${cpu cpu2}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${cpubar cpu2 10,112}
+${voffset -10}${alignr 12}\
+${if_match ${cpu cpu3}<=50}${color2}\
+${else}${if_match ${cpu cpu3}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${offset -17}${cpubar cpu3 10,111} \
+${if_match ${cpu cpu4}<=50}${color2}\
+${else}${if_match ${cpu cpu4}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${cpubar cpu4 10,112}
+${voffset -10}${alignr 12}\
+${if_match ${cpu cpu5}<=50}${color2}\
+${else}${if_match ${cpu cpu5}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${offset -17}${cpubar cpu5 10,111} \
+${if_match ${cpu cpu6}<=50}${color2}\
+${else}${if_match ${cpu cpu6}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${cpubar cpu6 10,112}
+${voffset -10}${alignr 12}\
+${if_match ${cpu cpu7}<=50}${color2}\
+${else}${if_match ${cpu cpu7}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${offset -17}${cpubar cpu7 10,111} \
+${if_match ${cpu cpu8}<=50}${color2}\
+${else}${if_match ${cpu cpu8}<=80}${color3}\
+${else}${color4}${endif}${endif}\
+${cpubar cpu8 10,112}\
+]]

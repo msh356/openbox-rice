@@ -1,0 +1,40 @@
+{
+  "$schema": "https://github.com/fastfetch-cli/fastfetch/raw/master/doc/json_schema.json",
+  "logo": {
+    "type": "chafa",
+    "source": "~/.config/fastfetch/logo.png",
+    "width": 20,
+    "height": 10,
+    "padding": {
+      "top": 0,
+      "left": 0,
+      "right": 2
+    },
+    "printRemaining": true,
+    "preserveAspectRatio": true,
+    "chafa": {
+      "fgOnly": true,
+      "symbols": "block+border+space-wide-inverted"
+    }
+  },
+  "display": {
+    "disableLinewrap": true,
+    "separator": ": ",
+    "color": {
+      "keys": "37",      // серый
+      "title": "37",     // серый
+      "output": "37",    // серый
+      "separator": "37"  // серый
+    }
+  },
+  "modules": [
+    { "type": "os", "key": "os", "keyIcon": "" },
+    { "type": "uptime", "key": "up", "keyIcon": "" },
+    { "type": "wm", "key": "wm", "keyIcon": "" },
+    { "type": "wmtheme", "key": "wmt", "keyIcon": "" },
+    { "type": "theme", "key": "thm", "keyIcon": "" },
+    { "type": "icons", "key": "icn", "keyIcon": "" },
+    { "type": "memory", "key": "mem", "keyIcon": "" },
+    { "type": "disk", "key": "dsk", "keyIcon": "" }
+  ]
+}

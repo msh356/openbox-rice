@@ -1,0 +1,70 @@
+-- ############ 
+-- # Settings # 
+-- ############
+
+conky.config = {
+
+color1 = "C7C7C7"; --white
+color2 = "EEEEEE"; --teal
+
+lua_load = '$HOME/conky/vars.lua';
+use_xft = true;
+update_interval = 1;
+total_run_times = 0;
+own_window = true;
+own_window_transparent =true;
+own_window_hints ="below,undecorated,sticky,skip_taskbar,skip_pager";
+own_window_argb_visual = true;
+own_window_argb_value = 0;
+background = true;
+double_buffer = true;
+draw_shades = false;
+draw_outline = false;
+draw_borders = false;
+draw_graph_borders = false;
+alignment = "bottom_left";
+gap_x = 10;
+gap_y = 70;
+no_buffers = true;
+uppercase = false;
+cpu_avg_samples = 2;
+override_utf8_locale = true;
+use_spacer = "left";
+pad_percents = 2;
+short_units = true;
+}
+
+-- ############ 
+-- #   Text   # 
+-- ############
+
+conky.text = [[
+${voffset 10}${font Ubuntu Mono:size=22}\
+${if_match "${exec playerctl -a status | sed -n -e '/Playing/p'}"=="Playing"}\
+${offset 16}${color1}NOW PLAYING on ${color2}\
+${lua getvar player ${exec playerctl -a metadata --format '{{lc(status)}} {{playerName}}' | sed -n -e '/playing/p' | sed 's/playing //g'}}\
+${color1} ${eval $${exec playerctl -p ${lua getvar player} position --format "{{ duration(position) }}"}}
+${voffset 15}\
+${if_match "${eval $${exec playerctl -p ${lua getvar player} metadata title}}"!=""}\
+${offset 16}${color2}Titel ${goto 120}${color1}\
+${eval $${exec playerctl -p ${lua getvar player} metadata title | sed 's/.mp3//g'}}
+${endif}\
+${if_match "${eval $${exec playerctl -p ${lua getvar player} metadata artist}}"!=""}\
+${offset 16}${color2}von ${color2}${goto 120}${color1}\
+${eval $${exec playerctl -p ${lua getvar player} metadata artist}}
+${endif}\
+${if_match "${eval $${exec playerctl -p ${lua getvar player} metadata album}}"!=""}\
+${offset 16}${color2}Album ${goto 120}${color1}\
+${eval $${exec playerctl -p ${lua getvar player} metadata album}}
+${endif}\
+${endif}\
+${voffset 0}${color1}${font GE Inspira:pixelsize=120}${time %H:%M}${font}${voffset -84}${offset 10}${color2}${font GE Inspira:pixelsize=42}${time %d} ${voffset -15}${color1}${font GE Inspira:pixelsize=22}${time  %B} ${time %Y}${font}${voffset 24}${font GE Inspira:pixelsize=58}${offset -148}${time %A}${font}
+${voffset 20}${offset 12}${font Ubuntu Mono:size=22}${color2}CPU${goto 90}$color1${cpu cpu0}%\
+${goto 160}${color2}RAM${goto 230}$color1$mem\
+${goto 350}${color2}HDD${goto 420}$color1${fs_free /}
+${voffset 10}${offset 12}${color2}NRG${goto 90}$color1${battery_percent BAT1}%\
+${goto 160}${color2}TMP${goto 230}${color1}${exec sensors | grep 'Package id' | awk '{print $4}' | sed 's/+//g'} \
+${goto 350}${color2}UPT${goto 420}${color1}${uptime_short}
+
+
+]]
