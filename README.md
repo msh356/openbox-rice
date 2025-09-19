@@ -52,3 +52,5 @@ git clone https://github.com/msh356/openbox-rice
 cp -r openbox-rice/openbox/. ~/
 clear && echo "Cool! Now select Openbox in your Display Manager."
 ```
+### опа внезапный пингвин 1кг
+<img width="90" height="51" alt="image" src="https://github.com/user-attachments/assets/7f53f168-13de-4fc1-9572-a55512b8f57c" />
